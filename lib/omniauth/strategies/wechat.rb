@@ -43,7 +43,6 @@ module OmniAuth
 
         Rails.logger.info request.params
         Rails.logger.info callback_url
-        Rails.logger.info params
 
         params = client.auth_code.authorize_params.merge(redirect_uri: callback_url).merge(authorize_params)
         params["appid"] = params.delete("client_id")
