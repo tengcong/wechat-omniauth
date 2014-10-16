@@ -37,7 +37,7 @@ module OmniAuth
 
       def request_phase
         auth_hash = request.params['auth_hash']
-        callback_url = "#{callback_url}?auth_hash=#{auth_hash}"
+        # callback_url = "#{callback_url}?auth_hash=#{auth_hash}"
 
         Rails.logger.info '-' * 30
 
@@ -48,6 +48,7 @@ module OmniAuth
         params["appid"] = params.delete("client_id")
 
         Rails.logger.info params
+        Rails.logger.info client.authorize_url(params)
 
         redirect client.authorize_url(params)
       end
