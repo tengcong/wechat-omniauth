@@ -38,6 +38,7 @@ module OmniAuth
       def request_phase
         auth_hash = request.params['auth_hash']
         # callback_url = "#{callback_url}?auth_hash=#{auth_hash}"
+        callback_url << "auth_hash=#{auth_hash}" if auth_hash
 
         Rails.logger.info '-' * 30
 
