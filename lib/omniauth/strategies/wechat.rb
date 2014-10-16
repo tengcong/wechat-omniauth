@@ -18,7 +18,6 @@ module OmniAuth
 
       option :provider_ignores_state, true
 
-
       uid do
         raw_info['openid']
       end
@@ -39,6 +38,7 @@ module OmniAuth
       end
 
       def request_phase
+        callback_url = "#{callback_url}?auth_hash=#{params['auth_hash']}"
         params = client.auth_code.authorize_params.merge(redirect_uri: callback_url).merge(authorize_params)
         params["appid"] = params.delete("client_id")
         redirect client.authorize_url(params)
