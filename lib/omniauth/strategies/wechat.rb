@@ -16,8 +16,6 @@ module OmniAuth
 
       option :token_params, {parse: :json}
 
-      option :provider_ignores_state, true
-
       uid do
         raw_info['openid']
       end

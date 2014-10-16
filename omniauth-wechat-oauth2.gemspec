@@ -2,8 +2,8 @@ version = File.read(File.expand_path('../VERSION', __FILE__)).strip
 
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
-  s.name        = 'wechat-omniauth'
-  s.version     = version
+  s.name        = 'wechat-omniauth-web'
+  s.version     = '0.0.1'
   s.summary     = 'login with wechat account by scanning qrcode with phone'
   s.description = 'login with wechat account by scanning qrcode with phone'
 
