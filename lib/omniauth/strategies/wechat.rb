@@ -36,9 +36,9 @@ module OmniAuth
       end
 
       def request_phase
-        auth_hash = request.params['auth_hash']
+        hash_key = request.params['hash_key']
 
-        new_callback_url = "#{callback_url}?auth_hash=#{auth_hash}"
+        new_callback_url = "#{callback_url}?hash_key=#{hash_key}"
 
         params = client.auth_code.authorize_params.merge(redirect_uri: new_callback_url).merge(authorize_params)
         params["appid"] = params.delete("client_id")
